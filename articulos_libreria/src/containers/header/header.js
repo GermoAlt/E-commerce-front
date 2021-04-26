@@ -3,7 +3,7 @@ import React from "react";
 import { TabMenu } from 'primereact/tabmenu';
 import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
-import { Chips } from 'primereact/chips';
+import { InputText } from 'primereact/inputtext';
 import logo from '../../resources/logo.svg'
 
 const items = [
@@ -15,9 +15,14 @@ const items = [
 ];
 
 const leftContents = (
-    <React.Fragment>
+    <React.Fragment >
         <img src={logo} className='logoFull' alt='Webquill'/>
-        <Chips/>
+        <div className="searchbar-container">
+            <span className="p-input-icon-right" id="searchbar">
+                <i className="pi pi-search"/>
+                <InputText />
+            </span>
+        </div>
     </React.Fragment>
 );
 
