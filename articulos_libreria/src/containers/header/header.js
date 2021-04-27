@@ -1,23 +1,21 @@
 import '../../App.css';
 import React from "react";
-import { Menubar } from 'primereact/menubar';
+import { MegaMenu } from 'primereact/megamenu';
 import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from '../../resources/logo.svg'
 
 const items = [
-    {label: 'Home', icon: 'pi pi-fw pi-home'},
-    {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-    {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-    {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-    {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+    {label: 'Inicio', icon: 'pi pi-fw pi-home'},
+    {label: 'Categorías', icon: 'pi pi-fw pi-th-large'},
+    {label: 'Ofertas', icon: 'pi pi-fw pi-tags'},
 ];
 
 const leftContents = (
     <React.Fragment >
         <img src={logo} className='logo' alt='Webquill'/>
-        <Menubar model={items} className="MenuCategorias"/>
+        <MegaMenu model={items} className="MenuCategorias"/>
     </React.Fragment>
 );
 
