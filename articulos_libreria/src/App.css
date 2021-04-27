@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+.p-scrolltop{
+  background: #0D89EC !important;
+}
 /*
 HEADER
 */
@@ -70,4 +73,17 @@ HOME PAGE
 .carouselPrincipal > .p-carousel{
   border: .5em solid black;
   padding: 20px;
+}
+
+.cardImage{
+  height: 5em;
+  width: 5em;
+  margin-top: 2rem;
+}
+
+.p-card{
+  width: 20rem;
+  margin-bottom: 2em;
+  margin-top: 2em;
+
 }

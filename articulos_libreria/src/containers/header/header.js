@@ -4,7 +4,7 @@ import { MegaMenu } from 'primereact/megamenu';
 import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-import logo from '../../resources/logo.svg'
+import logo from '../../resources/images/logo.svg'
 
 const items = [
     {label: 'Inicio', icon: 'pi pi-fw pi-home'},
