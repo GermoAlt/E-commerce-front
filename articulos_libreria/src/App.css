@@ -22,6 +22,10 @@ HEADER
   border: 0 !important;
 }
 
+.menu-categorias-content{
+  border: 0 !important;
+}
+
 .logo{
   max-height: 3em;
   margin-top: 10px ;
