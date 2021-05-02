@@ -6,7 +6,7 @@ import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from '../../resources/images/logo.svg'
-import Login from "../mainContent/login/Login";
+import Login from "../mainContent/login/login";
 import MenuCategoriesJson from '../../resources/json/menuCategories.json'
 
 

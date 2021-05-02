@@ -9,8 +9,8 @@
     "icon": "pi pi-fw pi-th-large",
     "items": [
       {
-        "label": "Export",
-        "icon": "pi pi-fw pi-external-link"
+        "label": "Cuadernos",
+        "icon": "pi pi-book"
       }
     ]
   },

@@ -54,7 +54,7 @@ const productTemplate = (producto) => {
         <div className={"carousel-principal"}>
             <Carousel value={productos} itemTemplate={productTemplate}
                       numVisible={3} numScroll={1}
-                      header={<h1>Ofertas</h1>}
+                      header={<h1>Oferdtas</h1>}
                       responsiveOptions={responsiveOptions}
                       circular autoplayInterval={3000}/>
         </div>
