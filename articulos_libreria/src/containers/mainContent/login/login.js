@@ -3,11 +3,13 @@ import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from "../../../resources/images/logo.svg";
+import AuthButton from "../../../components/AuthButton";
 
 const Login = () => {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [username, setUsermame] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const dialogFuncMap = {
         'displayBasic': setDisplayBasic,
@@ -29,7 +31,7 @@ const Login = () => {
     )
     return (
         <div className={"login"}>
-            <Button label="Login" icon="pi pi-user" className="p-button-rounded p-mr-2"onClick={() => onClick('displayBasic')} />
+            <AuthButton onClick={onClick}/>
             <Dialog className={"login-dialog"} footer={footer} visible={displayBasic} onHide={() => onHide('displayBasic')}
                     resizable={false} draggable={false} dismissableMask closable={false} showHeader={false}>
                 <div className={"login-dialog-content-container"}>
