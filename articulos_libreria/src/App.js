@@ -1,31 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Topbar from './Topbar';
 
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css';
 
-function App() {
+import React from "react";
+import PrimeReact from 'primereact/api';
+import { ScrollTop } from 'primereact/scrolltop'
+
+import Header from "./containers/header/header";
+import MainContent from "./containers/mainContent/mainContent";
+
+export default function App() {
+    PrimeReact.ripple = true;
   return (
     <div className="App">
-      <Topbar/>
-      <header className="App-header">
-      
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Editar <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ScrollTop/>
+      <Header/>
+      <MainContent/>
     </div>
   );
-
 }
-
-export default App;
