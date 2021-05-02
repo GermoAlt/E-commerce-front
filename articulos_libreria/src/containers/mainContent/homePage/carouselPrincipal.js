@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button'
 import  productosJson  from '../../../resources/json/products.json'
+import imageNotFound from '../../../resources/images/notFound.svg'
 
 export default function CarouselPrincipal() {
 
@@ -26,14 +27,11 @@ export default function CarouselPrincipal() {
 
 
 const productTemplate = (producto) => {
-    console.log("product", producto)
-    console.log("product")
-    console.log("product")
     return (
         <div className="product-item">
             <div className="product-item-content">
                 <div className="p-mb-3">
-                    <img src={`showcase/demo/images/product/${producto.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={producto.name} className="product-image" />
+                    <img src={`showcase/demo/images/product/${producto.image}`} onError={(e) => e.target.src=`${imageNotFound}`} alt={producto.name} className="carousel-product-image" />
                 </div>
                 <div>
                         <h4 className="p-mb-1">{producto.name}</h4>
@@ -53,8 +51,12 @@ const productTemplate = (producto) => {
 
 
     return (
-        <div className={"carouselPrincipal"}>
-            <Carousel value={productos} itemTemplate={productTemplate} numVisible={3} numScroll={1} header={<h1>Ofertas</h1>} responsiveOptions={responsiveOptions} circular autoplayInterval={3000}/>
+        <div className={"carousel-principal"}>
+            <Carousel value={productos} itemTemplate={productTemplate}
+                      numVisible={3} numScroll={1}
+                      header={<h1>Ofertas</h1>}
+                      responsiveOptions={responsiveOptions}
+                      circular autoplayInterval={3000}/>
         </div>
     );
 }

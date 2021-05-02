@@ -1,9 +1,9 @@
-import CarouselPrincipal from "./carouselPrincipal";
-import Ofertas from "./ofertas";
+import CarouselPrincipal from "./CarouselPrincipal";
+import Ofertas from "./Ofertas";
 
 export default function HomePage() {
     return (
-        <div className={"homePage"}>
+        <div className={"home-page"}>
             <CarouselPrincipal />
             <Ofertas />
         </div>

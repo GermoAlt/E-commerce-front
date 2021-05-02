@@ -5,6 +5,7 @@ import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from '../../resources/images/logo.svg'
+import Login from "../mainContent/login/Login";
 
 const items = [
     {label: 'Inicio', icon: 'pi pi-fw pi-home'},
@@ -15,7 +16,7 @@ const items = [
 const leftContents = (
     <React.Fragment >
         <img src={logo} className='logo' alt='Webquill'/>
-        <MegaMenu model={items} className="MenuCategorias"/>
+        <MegaMenu model={items} className="menu-categorias"/>
     </React.Fragment>
 );
 
@@ -28,13 +29,13 @@ const rightContents = (
             </span>
         </div>
         <Button icon="pi pi-shopping-cart" className="p-button-rounded p-mr-2" />
-        <Button icon="pi pi-user" className="p-button-rounded p-mr-2"/>
+        <Login />
     </React.Fragment>
 );
 
 export default function Header() {
     return (
-        <div className="Header p-d-flex">
+        <div className="app-header p-d-flex">
             <Toolbar left={leftContents} right={rightContents} />
         </div>
     );

@@ -9,7 +9,7 @@ import React from "react";
 import PrimeReact from 'primereact/api';
 import { ScrollTop } from 'primereact/scrolltop'
 
-import Header from "./containers/header/header";
+import Header from "./containers/header/Header";
 import MainContent from "./containers/mainContent/mainContent";
 
 export default function App() {
@@ -22,3 +22,4 @@ export default function App() {
     </div>
   );
 }
+
