@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useState} from "react";
+import React from "react";
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
 import { Toolbar } from 'primereact/toolbar';
@@ -18,7 +18,7 @@ import Login from "../mainContent/login/Login";
         return (
             <li className={"p-menuitem"}>
                 <Link to={`${path}`} className={"p-menuitem-link"}>
-                    <span className={classNames(options.iconClassName, `pi ${icon}`)}/>
+                    <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
                     <span className={options.labelClassName}>{item.label}</span>
                 </Link>
             </li>
@@ -28,7 +28,7 @@ import Login from "../mainContent/login/Login";
     const menuCategories = [{
             "label": "Inicio",
             template: (item, options) => {
-                return menuItemTemplate("pi-home", "/home", item, options);
+                return menuItemTemplate("pi-home", "/", item, options);
             }
         },
         {
@@ -43,15 +43,21 @@ import Login from "../mainContent/login/Login";
         },
         {
             "label": "Ofertas",
-            "icon": "pi pi-fw pi-tags"
+            template: (item, options) => {
+                return menuItemTemplate("pi-tags", "/ofertas", item, options);
+            }
         },
         {
             "label": "Transacciones",
-            "icon": "pi pi-fw pi-book"
+            template: (item, options) => {
+                return menuItemTemplate("pi-book", "/transacciones", item, options);
+            }
         },
         {
             "label": "Modificar Productos",
-            "icon": "pi pi-fw pi-sliders-v"
+            template: (item, options) => {
+                return menuItemTemplate("pi-sliders-v", "/gestionProductos", item, options);
+            }
         }]
 
     const leftContents = (

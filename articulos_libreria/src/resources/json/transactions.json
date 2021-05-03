@@ -1,0 +1,6 @@
+{
+  "data": [
+    {"name":  "item name", "date":  "01/01/1970", "price": "250", "hasDiscount": "false"},
+    {"name":  "item 2 name", "date":  "01/01/1970", "price": "20", "hasDiscount": "true"}
+  ]
+}
