@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
 import { Toolbar } from 'primereact/toolbar';
@@ -8,7 +8,7 @@ import { Badge } from 'primereact/badge';
 import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom'
 import classNames from "classnames";
-
+import articulosJson from '../../resources/json/products.json';
 import logo from '../../resources/images/logo.svg';
 import Login from "./login/Login";
 import { AppContext } from '../../AppContext';
@@ -16,6 +16,9 @@ import { AppContext } from '../../AppContext';
 
 export default function Header(props) {
     const [carritoCantidad] = useContext(AppContext)
+
+    const [products, setProducts] = useState(articulosJson.data);
+    const [globalFilter, setGlobalFilter] = useState(null);
 
     const menuItemTemplate = (icon, path, item, options) => {
         return (
@@ -116,7 +119,7 @@ export default function Header(props) {
             <div className="searchbar-container">
                 <span className="p-input-icon-right" id="searchbar">
                     <i className="pi pi-search" />
-                    <InputText placeholder="Search"/>
+                    <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar"/>
                 </span>
             </div>
             <Link to="/carrito" className="p-button-rounded p-mr-2">

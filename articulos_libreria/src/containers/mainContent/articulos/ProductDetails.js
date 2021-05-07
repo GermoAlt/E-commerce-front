@@ -29,6 +29,7 @@ const ProductDetails = () => {
             <BreadCrumb model={items} home={home} className={"product-details-breadcrumb"}/>
             <div className={"product-details-container"}>
                 <Panel header={"Descripción"}>
+                <span className={`product-badge status-${item.inventoryStatus.toLowerCase()}`}>{item.inventoryStatus}</span>
                     <div className={"product-details-panel-content-container"}>
                         <div><img src={`${item.image}`} alt={"Imagen del producto"}/> </div>
                         <div>
@@ -37,10 +38,12 @@ const ProductDetails = () => {
                             <p>{item.longDescription}</p>
                         </div>
                     </div>
+                    <Button label="Agregar al carrito" disabled={item.inventoryStatus === 'OUTOFSTOCK'} icon="pi pi-shopping-cart" onClick={agregarCarrito}/>
+
                 </Panel>
-                <Button label="Agregar al carrito" icon="pi pi-shopping-cart" onClick={agregarCarrito}/>
+                
             </div>
-        </div>
+        </div>  
     )
 }
 

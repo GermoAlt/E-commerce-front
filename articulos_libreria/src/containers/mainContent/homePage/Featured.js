@@ -14,8 +14,8 @@ const Featured = () => {
     const [sortOrder, setSortOrder] = useState(null);
     const [sortField, setSortField] = useState(null);
     const sortOptions = [
-        {label: 'Price High to Low', value: '!price'},
-        {label: 'Price Low to High', value: 'price'},
+        {label: 'De mayor a menor precio', value: '!price'},
+        {label: 'De menor a mayor precio', value: 'price'},
     ];
 
     const onSortChange = (event) => {
@@ -99,7 +99,7 @@ const Featured = () => {
         return (
             <div className="p-grid p-nogutter">
                 <div className="p-col-6" style={{textAlign: 'left'}}>
-                    <Dropdown options={sortOptions} value={sortKey} optionLabel="label" placeholder="Sort By Price" onChange={onSortChange}/>
+                    <Dropdown options={sortOptions} value={sortKey} optionLabel="label" placeholder="Ordenar por precio" onChange={onSortChange}/>
                 </div>
                 <div className="p-col-6" style={{textAlign: 'right'}}>
                     <DataViewLayoutOptions layout={layout} onChange={(e) => setLayout(e.value)} />

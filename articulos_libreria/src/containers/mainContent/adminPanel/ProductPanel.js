@@ -143,7 +143,7 @@ const ProductPanel = (props) => {
         setProducts(_products);
         setMensajeDeleteArticulos(false);
         agregarArticulosSeleccionados(null);
-        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Artículos eliminados', life: 3000 });
     }
 
     const onCategoryChange = (e) => {
@@ -298,57 +298,62 @@ const ProductPanel = (props) => {
                         currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos"
                         globalFilter={globalFilter} emptyMessage="No se encontraron artículos" header={header}>
                         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}/>
-                        <Column field="code" header="Code" sortable body={codeBodyTemplate}/>
-                        <Column field="name" header="Name" sortable body={nameBodyTemplate}/>
-                        <Column header="Image" body={imageBodyTemplate}/>
-                        <Column field="price" header="Price" body={priceBodyTemplate} sortable/>
-                        <Column field="category" header="Category" sortable body={categoryBodyTemplate}/>
-                        <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable/>
-                        <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable/>
+                        <Column field="name" header="Nombre" sortable body={nameBodyTemplate}/>
+                        <Column field="price" header="Precio" body={priceBodyTemplate} sortable/>
+                        <Column field="category" header="Categoría" sortable body={categoryBodyTemplate}/>
+                        <Column field="inventoryStatus" header="Estado" body={statusBodyTemplate} sortable/>
                         <Column body={actionBodyTemplate}/>
                     </DataTable>
 
                     <Dialog visible={productDialog} style={{ width: '450px' }} header="Detalles del artículo" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialogo}>
                         {product.image && <img src={`assets/demo/images/product/${product.image}`} alt={product.image} className="product-image" />}
                         <div className="p-field">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Nombre</label>
                             <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
                             {submitted && !product.name && <small className="p-invalid">El nombre es obligatorio</small>}
                         </div>
                         <div className="p-field">
-                            <label htmlFor="description">Description</label>
+                            <label htmlFor="description">Descripción</label>
                             <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
                         </div>
 
                         <div className="p-field">
-                            <label className="p-mb-3">Category</label>
+                            <label className="p-mb-3">Categoría</label>
                             <div className="p-formgrid p-grid">
                                 <div className="p-field-radiobutton p-col-6">
-                                    <RadioButton inputId="category1" name="category" value="Accessories" onChange={onCategoryChange} checked={product.category === 'Accessories'} />
-                                    <label htmlFor="category1">Accessories</label>
+                                    <RadioButton inputId="category1" name="category" value="Cuadernos" onChange={onCategoryChange} checked={product.category === 'Cuadernos'} />
+                                    <label htmlFor="category1">Cuadernos</label>
                                 </div>
                                 <div className="p-field-radiobutton p-col-6">
-                                    <RadioButton inputId="category2" name="category" value="Clothing" onChange={onCategoryChange} checked={product.category === 'Clothing'} />
-                                    <label htmlFor="category2">Clothing</label>
+                                    <RadioButton inputId="category2" name="category" value="Carpetas" onChange={onCategoryChange} checked={product.category === 'Carpetas'} />
+                                    <label htmlFor="category2">Carpetas</label>
                                 </div>
                                 <div className="p-field-radiobutton p-col-6">
-                                    <RadioButton inputId="category3" name="category" value="Electronics" onChange={onCategoryChange} checked={product.category === 'Electronics'} />
-                                    <label htmlFor="category3">Electronics</label>
+                                    <RadioButton inputId="category3" name="category" value="Escritura" onChange={onCategoryChange} checked={product.category === 'Escritura'} />
+                                    <label htmlFor="category3">Escritura</label>
                                 </div>
                                 <div className="p-field-radiobutton p-col-6">
-                                    <RadioButton inputId="category4" name="category" value="Fitness" onChange={onCategoryChange} checked={product.category === 'Fitness'} />
-                                    <label htmlFor="category4">Fitness</label>
+                                    <RadioButton inputId="category4" name="category" value=">Insumos de Oficina" onChange={onCategoryChange} checked={product.category === '>Insumos de Oficina'} />
+                                    <label htmlFor="category4">Insumos de Oficina</label>
+                                </div>
+                                <div className="p-field-radiobutton p-col-6">
+                                    <RadioButton inputId="category5" name="category" value="Tinta" onChange={onCategoryChange} checked={product.category === 'Tinta'} />
+                                    <label htmlFor="category5">Tinta</label>
+                                </div>
+                                <div className="p-field-radiobutton p-col-6">
+                                    <RadioButton inputId="category6" name="category" value="Otros" onChange={onCategoryChange} checked={product.category === 'Otros'} />
+                                    <label htmlFor="category6">Otros</label>
                                 </div>
                             </div>
                         </div>
 
                         <div className="p-formgrid p-grid">
                             <div className="p-field p-col">
-                                <label htmlFor="price">Price</label>
+                                <label htmlFor="price">Precio</label>
                                 <InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="USD" locale="en-US" />
                             </div>
                             <div className="p-field p-col">
-                                <label htmlFor="quantity">Quantity</label>
+                                <label htmlFor="quantity">Cantidad</label>
                                 <InputNumber id="quantity" value={product.quantity} onValueChange={(e) => onInputNumberChange(e, 'quantity')} integeronly />
                             </div>
                         </div>
