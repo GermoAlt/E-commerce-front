@@ -1,4 +1,4 @@
-import CarouselPrincipal from "./carouselPrincipal";
+import CarouselPrincipal from "./CarouselPrincipal";
 import Ofertas from "./Ofertas";
 
 export default function HomePage() {

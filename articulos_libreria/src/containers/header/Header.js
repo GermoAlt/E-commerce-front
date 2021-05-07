@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import classNames from "classnames";
 
 import logo from '../../resources/images/logo.svg';
-import Login from "../mainContent/login/login";
+import Login from "../mainContent/login/Login";
 import { AppContext } from '../../AppContext';
 
 
