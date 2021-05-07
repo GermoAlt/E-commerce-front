@@ -239,6 +239,10 @@ PRODUCT DETAILS
   margin-bottom: 25px;
 }
 
+.product-details-panel-content-container{
+  display: flex;
+}
+
 /*
 DATAVIEW
  */
