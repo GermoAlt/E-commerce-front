@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import imageNotFound from '../../../resources/images/notFound.svg'

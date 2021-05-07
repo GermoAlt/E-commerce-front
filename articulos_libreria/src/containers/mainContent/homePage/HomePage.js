@@ -1,3 +1,4 @@
+import React from "react";
 import CarouselPrincipal from "./CarouselPrincipal";
 import Ofertas from "./Ofertas";
 

@@ -1,6 +1,6 @@
-import React, { useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import { Button } from 'primereact/button';
-import { AppContext, useStateValue } from '../../../AppContext';
+import { AppContext } from '../../../AppContext';
 
 
 export const Cuadernos = (props) => {

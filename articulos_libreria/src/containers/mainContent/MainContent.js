@@ -1,3 +1,4 @@
+import React from "react";
 import HomePage from "./homePage/HomePage";
 import { Switch, Route } from "react-router-dom";
 import Ofertas from "./homePage/Ofertas";
@@ -5,7 +6,6 @@ import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/ListaArticulos";
 import Carrito from "./articulos/Carrito";
-
 
 export default function MainContent(props){
  return (

@@ -90,64 +90,64 @@ const Carrito = () => {
 
     const codeBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 {rowData.code}
-            </>
+            </div>
         );
     }
 
     const nameBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 {rowData.name}
-            </>
+            </div>
         );
     }
 
     const imageBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 <img src={`assets/demo/images/product/${rowData.image}`} alt={rowData.image} className="product-image" />
-            </>
+            </div>
         )
     }
 
     const priceBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 {formatCurrency(rowData.price)}
-            </>
+            </div>
         );
     }
 
     const categoryBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 {rowData.category}
-            </>
+            </div>
         );
     }
 
     const ratingBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 <Rating value={rowData.rating} readonly cancel={false} />
-            </>
+            </div>
         );
     }
 
     const statusBodyTemplate = (rowData) => {
         return (
-            <>
+            <div>
                 <span className="p-column-title"></span>
                 <span className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}>{rowData.inventoryStatus}</span>
-            </>
+            </div>
         )
     }
 
@@ -165,16 +165,16 @@ const Carrito = () => {
     );
 
     const deleteProductDialogFooter = (
-        <>
+        <div>
             <Button label="No" icon="pi pi-times" className="p-button-text" onClick={ocultarMensajeDeleteArticulo} />
             <Button label="Si" icon="pi pi-check" className="p-button-text" onClick={eliminarArticulo} />
-        </>
+        </div>
     );
     const deleteProductsDialogFooter = (
-        <>
+        <div>
             <Button label="No" icon="pi pi-times" className="p-button-text" onClick={ocultarMensajeDeleteArticulos} />
             <Button label="Si" icon="pi pi-check" className="p-button-text" onClick={eliminarArticulosSeleccionados} />
-        </>
+        </div>
     );
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, { useState} from 'react';
 import articulosJson from '../../../resources/json/products.json';
 import {Cuadernos} from './Cuadernos';
 
