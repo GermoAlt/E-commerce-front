@@ -6,7 +6,6 @@ import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/listaArticulos";
 import Carrito from "./articulos/carrito";
 
-
 export default function MainContent(props){
  return (
    <div className={"mainContent"}>

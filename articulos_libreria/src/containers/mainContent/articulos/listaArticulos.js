@@ -17,6 +17,10 @@ const ListaArticulos = () => {
                                 description={product.description}
                                 image={product.image}
                                 price={product.price}
+                                category={product.category}
+                                quantity={product.quantity}
+                                inventoryStatus={product.inventoryStatus}
+                                rating={product.rating}
                             ></Cuadernos>
 
                     )
