@@ -218,6 +218,11 @@ LOGIN
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.tarjeta > a > img {
+  height: 100px;
+  width: 100%;
+}
+
 /*
 CARRITO
  */
@@ -233,3 +238,4 @@ PRODUCT DETAILS
 .product-details-breadcrumb{
   margin-bottom: 25px;
 }
+

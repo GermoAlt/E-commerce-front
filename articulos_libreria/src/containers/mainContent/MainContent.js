@@ -16,7 +16,7 @@ export default function MainContent(props){
            <Route exact path="/">
                <HomePage />
            </Route>
-           <Route path="/articulos">
+           <Route path="/articulos/:category">
                <ListaArticulos />
            </Route>
            <Route path="/ofertas">
