@@ -13,6 +13,13 @@ const Checkout = () =>{
 
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [dob, setDob] = useState('');
+    const [address, setAddress] = useState('');
+    const [phone, setPhone] = useState('');
+    const [country, setCountry] = useState('');
+    const [zipcode, setZipcode] = useState('');
     const toast = useRef(null);
     const items = [
         {

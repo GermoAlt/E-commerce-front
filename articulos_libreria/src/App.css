@@ -370,3 +370,11 @@ DATAVIEW
 .featured{
   padding-bottom: 50px;
 }
+
+/*
+CHECKOUT
+ */
+
+.checkout-accordion{
+  margin-top:25px;
+}
