@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import {Steps} from 'primereact/steps';
 import { Toast } from 'primereact/toast';
 import { AppContext } from '../../../AppContext';
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./step3";
 
 const Checkout = () =>{
     const [products, setProducts] = useContext(AppContext)
@@ -44,10 +47,10 @@ const Checkout = () =>{
 
             <div className="card">
                 <h5>blablablabla</h5>
-                <Steps model={items} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false}>
-                </Steps>
-
-                
+                <Steps model={items} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false}/>
+                <Step1 visible={activeIndex}/>
+                <Step2 visible={activeIndex}/>
+                <Step3 visible={activeIndex}/>
             </div>
         </div>
     );

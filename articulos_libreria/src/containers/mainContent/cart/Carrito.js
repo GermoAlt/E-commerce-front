@@ -118,8 +118,8 @@ const Carrito = () => {
     const header = (
         <div className="table-header">
             <Button label="Vaciar carrito" icon="pi pi-trash" className="p-button-danger" onClick={confirmarDeleteSeleccionado} disabled={!selectedProducts || !selectedProducts.length} />
-            <Link to="/checkout" className="p-button-rounded p-mr-2">
-                <Button label={"Confirmar carrito"} icon="pi pi-save" className="p-button-rounded p-mr-2"></Button>
+            <Link to="/checkout" className="p-button-rounded p-mr-2 carrito-button" >
+                <Button label={"Confirmar carrito"} icon="pi pi-save" className=" p-mr-2"/>
             </Link>
         </div>
     );

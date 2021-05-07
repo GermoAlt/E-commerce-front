@@ -5,8 +5,8 @@ import Ofertas from "./articulos/Ofertas";
 import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/ListaArticulos";
-import Carrito from "./articulos/Carrito";
-import Checkout from "./articulos/Checkout";
+import Carrito from "./cart/Carrito";
+import Checkout from "./cart/Checkout";
 import ProductDetails from "./articulos/ProductDetails";
 import {Redirect} from "react-router";
 
