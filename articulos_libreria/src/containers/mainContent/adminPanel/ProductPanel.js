@@ -4,7 +4,6 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
 import { Rating } from 'primereact/rating';
 import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -16,8 +15,9 @@ import articulosJson from '../../../resources/json/products.json';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import {Redirect} from "react-router";
 
-const ProductPanel = () => {
+const ProductPanel = (props) => {
 
     let articuloVacio = {
         id: null,
@@ -280,7 +280,12 @@ const ProductPanel = () => {
         </div>
     );
 
+    if(props.isLoggedIn !== "admin"){
+        return <Redirect to={"/"}/>
+    }
+
     return (
+
         <div className="p-grid crud-demo">
             <div className="p-col-12">
                 <div className="card">

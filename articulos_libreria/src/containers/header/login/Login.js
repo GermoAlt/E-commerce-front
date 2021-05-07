@@ -3,7 +3,7 @@ import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from "../../../resources/images/logo.svg";
-import AuthButton from "../../../components/AuthButton";
+import AuthButton from "./AuthButton";
 
 const Login = (props) => {
     const [displayBasic, setDisplayBasic] = useState(false);

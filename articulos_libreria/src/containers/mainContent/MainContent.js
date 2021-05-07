@@ -19,10 +19,10 @@ export default function MainContent(props){
                <Ofertas />
            </Route>
            <Route path="/transacciones">
-               <TransactionLog />
+               <TransactionLog isLoggedIn={props.isLoggedIn}/>
            </Route>
            <Route path="/gestionProductos">
-               <ProductPanel />
+               <ProductPanel isLoggedIn={props.isLoggedIn}/>
            </Route>
            <Route path="/carrito" component={Carrito}/>
        </Switch>
