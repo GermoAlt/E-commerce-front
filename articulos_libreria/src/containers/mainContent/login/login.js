@@ -9,7 +9,6 @@ const Login = () => {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [username, setUsermame] = useState('');
     const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const dialogFuncMap = {
         'displayBasic': setDisplayBasic,

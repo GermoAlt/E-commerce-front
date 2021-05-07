@@ -1,0 +1,16 @@
+{
+  "data": [
+    {"idTransaction": 1, "total": 270, "date":  "01/01/1970",
+      "items": [
+        {"name":  "item name", "price": "250", "hasDiscount": "false"},
+        {"name":  "item 2 name", "price": "20", "hasDiscount": "true"}
+      ]
+    },
+    {"idTransaction": 2, "total": 270, "date":  "01/01/1970",
+      "items": [
+        {"name":  "item name", "price": "250", "hasDiscount": "false"},
+        {"name":  "item 2 name", "price": "20", "hasDiscount": "true"}
+      ]
+    }
+  ]
+}

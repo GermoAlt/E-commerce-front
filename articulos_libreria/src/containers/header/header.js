@@ -3,7 +3,6 @@ import React, {useState,useContext} from "react";
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
 import { Toolbar } from 'primereact/toolbar';
-import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { Link } from 'react-router-dom'
 import classNames from "classnames";
@@ -21,7 +20,7 @@ import { AppContext } from '../../AppContext';
         return (
             <li className={"p-menuitem"}>
                 <Link to={`${path}`} className={"p-menuitem-link"}>
-                    <span className={classNames(options.iconClassName, `pi ${icon}`)}/>
+                    <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
                     <span className={options.labelClassName}>{item.label}</span>
                 </Link>
             </li>
@@ -31,7 +30,7 @@ import { AppContext } from '../../AppContext';
     const menuCategories = [{
             "label": "Inicio",
             template: (item, options) => {
-                return menuItemTemplate("pi-home", "/home", item, options);
+                return menuItemTemplate("pi-home", "/", item, options);
             }
         },
         {
@@ -49,15 +48,21 @@ import { AppContext } from '../../AppContext';
         },
         {
             "label": "Ofertas",
-            "icon": "pi pi-fw pi-tags"
+            template: (item, options) => {
+                return menuItemTemplate("pi-tags", "/ofertas", item, options);
+            }
         },
         {
             "label": "Transacciones",
-            "icon": "pi pi-fw pi-book"
+            template: (item, options) => {
+                return menuItemTemplate("pi-book", "/transacciones", item, options);
+            }
         },
         {
             "label": "Modificar Productos",
-            "icon": "pi pi-fw pi-sliders-v"
+            template: (item, options) => {
+                return menuItemTemplate("pi-sliders-v", "/gestionProductos", item, options);
+            }
         }]
 
     const leftContents = (
@@ -79,7 +84,7 @@ import { AppContext } from '../../AppContext';
                     <InputText placeholder="Search"/>
                 </span>
             </div>
-            <Link to="/carrito" className="p-button-rounded p-mr-2">Carrito </Link>
+            <Link to="/carrito" className="p-button-rounded p-mr-2">Carrito</Link>
             <span>Artículos en carrito: {carritoCantidad.length}</span>
             <Login />
         </React.Fragment>
