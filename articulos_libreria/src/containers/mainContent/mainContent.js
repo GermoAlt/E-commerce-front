@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Ofertas from "./homePage/Ofertas";
 import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
+import ListaArticulos from "./articulos/listaArticulos";
+import Carrito from "./articulos/carrito";
 
 export default function MainContent(props){
  return (
@@ -11,6 +13,7 @@ export default function MainContent(props){
            <Route exact path="/">
                <HomePage />
            </Route>
+           <Route path="/articulos" component={ListaArticulos}/>
            <Route path="/ofertas">
                <Ofertas />
            </Route>
@@ -20,6 +23,7 @@ export default function MainContent(props){
            <Route path="/gestionProductos">
                <ProductPanel />
            </Route>
+           <Route path="/carrito" component={Carrito}/>
        </Switch>
    </div>
  );
