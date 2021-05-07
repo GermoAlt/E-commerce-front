@@ -16,7 +16,7 @@ import MainContent from "./containers/mainContent/MainContent";
 import { Provider } from './AppContext'
 
 export default function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(null);
 
     PrimeReact.ripple = true;
   return (
@@ -25,7 +25,7 @@ export default function App() {
           <Provider>
             <Router>
               <ScrollTop/>
-              <Header isLoggedIn={isLoggedIn}/>
+              <Header isLoggedIn={isLoggedIn} setIsLoggedIn={(value) => setIsLoggedIn(value)}/>
               <MainContent isLoggedIn={isLoggedIn}/>
             </Router>
           </Provider>

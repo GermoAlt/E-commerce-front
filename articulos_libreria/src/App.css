@@ -5,6 +5,42 @@
 .p-scrolltop{
   background: #0D89EC !important;
 }
+
+.hidden{
+  display: none !important;
+}
+
+
+.error-shake {
+  -webkit-animation: kf_shake 0.4s 1 linear;
+  -moz-animation: kf_shake 0.4s 1 linear;
+  -o-animation: kf_shake 0.4s 1 linear;
+}
+@-webkit-keyframes kf_shake {
+  0% { -webkit-transform: translate(30px); }
+  20% { -webkit-transform: translate(-30px); }
+  40% { -webkit-transform: translate(15px); }
+  60% { -webkit-transform: translate(-15px); }
+  80% { -webkit-transform: translate(8px); }
+  100% { -webkit-transform: translate(0px); }
+}
+@-moz-keyframes kf_shake {
+  0% { -moz-transform: translate(30px); }
+  20% { -moz-transform: translate(-30px); }
+  40% { -moz-transform: translate(15px); }
+  60% { -moz-transform: translate(-15px); }
+  80% { -moz-transform: translate(8px); }
+  100% { -moz-transform: translate(0px); }
+}
+@-o-keyframes kf_shake {
+  0% { -o-transform: translate(30px); }
+  20% { -o-transform: translate(-30px); }
+  40% { -o-transform: translate(15px); }
+  60% { -o-transform: translate(-15px); }
+  80% { -o-transform: translate(8px); }
+  100% { -o-origin-transform: translate(0px); }
+}
+
 /*
 HEADER
 */
@@ -63,6 +99,9 @@ HEADER
 /*
 MAIN CONTENT
 */
+.mainContent{
+  margin-top:25px;
+}
 @media only screen and (min-width: 1024px) {
   .mainContent {
     padding-left: 10em;
@@ -152,6 +191,11 @@ LOGIN
 
 }
 
+.login-dialog-error-message{
+  display: flex;
+  margin: auto;
+}
+
 .grid {
   display: flex;
   justify-content: center;
@@ -171,4 +215,11 @@ LOGIN
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+/*
+CARRITO
+ */
+.carrito-table{
+  border: 1px solid #e9ecef;
 }

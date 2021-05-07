@@ -79,7 +79,7 @@ const Carrito = () => {
     }
 
 
-    const leftToolbarTemplate = () => {
+    const dataTableHeader = () => {
         return (
             <React.Fragment>
                 <Button label="Vaciar carrito" icon="pi pi-trash" className="p-button-danger" onClick={confirmarDeleteSeleccionado} disabled={!selectedProducts || !selectedProducts.length} />
@@ -142,15 +142,6 @@ const Carrito = () => {
         );
     }
 
-    const statusBodyTemplate = (rowData) => {
-        return (
-            <div>
-                <span className="p-column-title"></span>
-                <span className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}>{rowData.inventoryStatus}</span>
-            </div>
-        )
-    }
-
     const actionBodyTemplate = (rowData) => {
         return (
             <div className="actions">
@@ -161,6 +152,7 @@ const Carrito = () => {
 
     const header = (
         <div className="table-header">
+            <Button label="Vaciar carrito" icon="pi pi-trash" className="p-button-danger" onClick={confirmarDeleteSeleccionado} disabled={!selectedProducts || !selectedProducts.length} />
         </div>
     );
 
@@ -180,21 +172,15 @@ const Carrito = () => {
     return (
         <div className="p-grid crud-demo">
             <div className="p-col-12">
-                <div className="card">
+                <div className="card carrito-table">
                     <Toast ref={toast} />
-                    <Toolbar className="p-mb-4" left={leftToolbarTemplate} ></Toolbar>
-
                     <DataTable ref={datatable} value={products} selection={selectedProducts} onSelectionChange={(e) => setArticulosSeleccionados(e.value)}
                         globalFilter={globalFilter} emptyMessage="No products found." header={header}>
-                        <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-                        <Column field="code" header="Code" sortable body={codeBodyTemplate}></Column>
-                        <Column field="name" header="Name" sortable body={nameBodyTemplate}></Column>
-                        <Column header="Image" body={imageBodyTemplate}></Column>
-                        <Column field="price" header="Price" body={priceBodyTemplate} sortable></Column>
-                        <Column field="category" header="Category" sortable body={categoryBodyTemplate}></Column>
-                        <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column>
-                        <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable></Column>
-                        <Column body={actionBodyTemplate}></Column>
+                        <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}/>
+                        <Column field="name" header="Name" sortable body={nameBodyTemplate}/>
+                        <Column field="price" header="Price" body={priceBodyTemplate} sortable/>
+                        <Column field="category" header="Category" sortable body={categoryBodyTemplate}/>
+                        <Column body={actionBodyTemplate}/>
                     </DataTable>
 
                     <Dialog visible={deleteProductDialog} style={{ width: '450px' }} header="Confirmar" modal footer={deleteProductDialogFooter} onHide={ocultarMensajeDeleteArticulo}>

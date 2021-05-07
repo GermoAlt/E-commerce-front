@@ -5,13 +5,15 @@ import { InputText } from 'primereact/inputtext';
 import logo from "../../../resources/images/logo.svg";
 import AuthButton from "../../../components/AuthButton";
 
-const Login = () => {
+const Login = (props) => {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [username, setUsermame] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(false);
 
     const dialogFuncMap = {
         'displayBasic': setDisplayBasic,
+        'error': setError,
     }
 
     const onClick = (name) => {
@@ -22,15 +24,35 @@ const Login = () => {
         dialogFuncMap[`${name}`](false);
     }
 
+    const validateLogin = () => {
+        if(username === "admin" && password === "admin"){
+            handleSuccessfulLogin("admin");
+        } else if(username === "user" && password === "user"){
+            handleSuccessfulLogin("user");
+        } else {
+            showErrorMessage();
+        }
+    }
+
+    const handleSuccessfulLogin = (value) => {
+        props.setIsLoggedIn(value);
+        setError(false);
+        onHide("displayBasic");
+    }
+
+    const showErrorMessage = () => {
+        setError(true);
+    }
+
     const footer = (
         <div>
             <Button label="Cancelar" className="p-button-rounded p-mr-2 p-button-secondary" onClick={() => onHide('displayBasic')} />
-            <Button label="Login" className="p-button-rounded p-mr-2" onClick={() => onClick('displayBasic')} />
+            <Button label="Login" className="p-button-rounded p-mr-2" onClick={() => validateLogin()} />
         </div>
     )
     return (
         <div className={"login"}>
-            <AuthButton onClick={onClick}/>
+            <AuthButton isLoggedIn={props.isLoggedIn} setIsLoggedIn={(value) => {props.setIsLoggedIn(value)}} onClick={onClick}/>
             <Dialog className={"login-dialog"} footer={footer} visible={displayBasic} onHide={() => onHide('displayBasic')}
                     resizable={false} draggable={false} dismissableMask closable={false} showHeader={false}>
                 <div className={"login-dialog-content-container"}>
@@ -43,6 +65,9 @@ const Login = () => {
                     </span>
                     <span className="login-dialog-input">
                         <InputText id="in" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={"Contraseña"}/>
+                    </span>
+                    <span className={`login-dialog-error-message ${!error ? "hidden" : ""}`}>
+                        <small id="username2-help" className="p-error p-d-block">Credenciales inválidas</small>
                     </span>
                 </div>
             </Dialog>
