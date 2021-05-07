@@ -1,3 +1,4 @@
+import React from "react";
 const Step3 = (props) => {
     return (
         <div className={`${props.visible !== 2 ? "hidden" : ""}`}>
