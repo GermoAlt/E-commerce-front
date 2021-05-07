@@ -21,11 +21,11 @@ export const Cuadernos = (props) => {
     
     const agregarCarrito = () => {
       const cuaderno = {props};
-        setCart(carritoActual => [...carritoActual, cuaderno])
+        setCart(carritoActual => [...carritoActual, cuaderno.props])
     }
     return (
         <div>
-                <div id={props.id} className="card">
+                <div id={props.id} className="tarjeta">
                     <a>
                         <img src={props.image}/>
                         <h3>{props.name}</h3>
