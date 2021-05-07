@@ -7,6 +7,7 @@ import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/ListaArticulos";
 import Carrito from "./articulos/Carrito";
 import ProductDetails from "./articulos/ProductDetails";
+import {Redirect} from "react-router";
 
 export default function MainContent(props){
  return (
@@ -33,6 +34,7 @@ export default function MainContent(props){
            <Route path="/producto/:id">
                <ProductDetails/>
            </Route>
+           <Redirect to={"/"} />
        </Switch>
    </div>
  );
