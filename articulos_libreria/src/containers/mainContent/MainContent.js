@@ -6,6 +6,7 @@ import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/ListaArticulos";
 import Carrito from "./articulos/Carrito";
+import Checkout from "./articulos/Checkout";
 
 export default function MainContent(props){
  return (
@@ -25,6 +26,7 @@ export default function MainContent(props){
                <ProductPanel />
            </Route>
            <Route path="/carrito" component={Carrito}/>
+           <Route path="/checkout" component={Checkout}/>
        </Switch>
    </div>
  );

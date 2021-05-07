@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
 import { Toolbar } from 'primereact/toolbar';
 import { Dialog } from 'primereact/dialog';
+import { Link } from 'react-router-dom'
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -27,7 +28,8 @@ const Carrito = () => {
     };
 
     const [products, setProducts] = useContext(AppContext)
-    const precioTotal = products.reduce((acc, curr) => acc + curr.price, 0);
+
+  
 
     const [deleteProductDialog, setMensajeDeleteArticulo] = useState(false);
     const [deleteProductsDialog, setMensajeDeleteArticulos] = useState(false);
@@ -70,32 +72,15 @@ const Carrito = () => {
         setMensajeDeleteArticulos(true);
     }
 
+
     const eliminarArticulosSeleccionados = () => {
-        let products = products.filter(val => !selectedProducts.includes(val));
-        setProducts(products);
+        let _products = products.filter(val => !selectedProducts.includes(val));
+        setProducts(_products);
         setMensajeDeleteArticulos(false);
         setArticulosSeleccionados(null);
         toast.current.show({ severity: 'success', summary: 'Éxito', detail: 'Artículos eliminados', life: 3000 });
     }
 
-
-    const dataTableHeader = () => {
-        return (
-            <React.Fragment>
-                <Button label="Vaciar carrito" icon="pi pi-trash" className="p-button-danger" onClick={confirmarDeleteSeleccionado} disabled={!selectedProducts || !selectedProducts.length} />
-            </React.Fragment>
-        )
-    }
-
-
-    const codeBodyTemplate = (rowData) => {
-        return (
-            <div>
-                <span className="p-column-title"></span>
-                {rowData.code}
-            </div>
-        );
-    }
 
     const nameBodyTemplate = (rowData) => {
         return (
@@ -153,6 +138,9 @@ const Carrito = () => {
     const header = (
         <div className="table-header">
             <Button label="Vaciar carrito" icon="pi pi-trash" className="p-button-danger" onClick={confirmarDeleteSeleccionado} disabled={!selectedProducts || !selectedProducts.length} />
+            <Link to="/checkout" className="p-button-rounded p-mr-2">
+                <Button label={"Confirmar carrito"} icon="pi pi-save" className="p-button-rounded p-mr-2"></Button>
+            </Link>
         </div>
     );
 
@@ -175,7 +163,7 @@ const Carrito = () => {
                 <div className="card carrito-table">
                     <Toast ref={toast} />
                     <DataTable ref={datatable} value={products} selection={selectedProducts} onSelectionChange={(e) => setArticulosSeleccionados(e.value)}
-                        globalFilter={globalFilter} emptyMessage="No products found." header={header}>
+                        globalFilter={globalFilter} emptyMessage="No se encontraron artículos" header={header}>
                         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}/>
                         <Column field="name" header="Name" sortable body={nameBodyTemplate}/>
                         <Column field="price" header="Price" body={priceBodyTemplate} sortable/>
