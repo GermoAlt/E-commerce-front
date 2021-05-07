@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import {useParams} from "react-router";
 import { BreadCrumb } from 'primereact/breadcrumb';
 import { Panel } from 'primereact/panel';
 import products from "../../../resources/json/products.json"
+import { AppContext } from '../../../AppContext';
+import { Button } from 'primereact/button';
 
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
     const id = useParams().id;
     const item = products.data.filter((item) => item.id === id)[0];
     console.log("item", item)
@@ -14,7 +16,12 @@ const ProductDetails = () => {
         { label: `${item.category}`},
     ];
 
+    const [cart, setCart] = useContext(AppContext)
 
+    const agregarCarrito = () => {
+        const prod = item;
+          setCart(carritoActual => [...carritoActual, prod])
+      }
 
     const home = { icon: 'pi pi-home', url: 'http://localhost:3000/' }
     return (
@@ -31,6 +38,7 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </Panel>
+                <Button label="Agregar al carrito" icon="pi pi-shopping-cart" onClick={agregarCarrito}/>
             </div>
         </div>
     )
