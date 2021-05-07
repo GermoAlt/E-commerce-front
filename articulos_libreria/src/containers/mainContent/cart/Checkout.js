@@ -4,7 +4,7 @@ import { Toast } from 'primereact/toast';
 import { AppContext } from '../../../AppContext';
 import Step1 from "./Step1";
 import Step2 from "./Step2";
-import Step3 from "./step3";
+import Step3 from "./Step3";
 
 const Checkout = () =>{
     const [products, setProducts] = useContext(AppContext)
