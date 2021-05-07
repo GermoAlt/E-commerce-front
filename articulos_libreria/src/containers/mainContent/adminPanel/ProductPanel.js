@@ -295,7 +295,7 @@ const ProductPanel = (props) => {
                     <DataTable ref={dt} value={products} selection={articulosSeleccionados} onSelectionChange={(e) => agregarArticulosSeleccionados(e.value)}
                         dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]} className="datatable-responsive"
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos"
                         globalFilter={globalFilter} emptyMessage="No se encontraron artículos" header={header}>
                         <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
                         <Column field="code" header="Code" sortable body={codeBodyTemplate}></Column>

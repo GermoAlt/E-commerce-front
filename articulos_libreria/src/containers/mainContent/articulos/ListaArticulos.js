@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import articulosJson from '../../../resources/json/products.json';
-import {Cuadernos} from './Cuadernos';
+import {ProductCard} from './ProductCard';
 
 const ListaArticulos = () => {
     const [articulos] = useState(articulosJson.data);
@@ -10,7 +10,7 @@ const ListaArticulos = () => {
             <div className="grid">
                 {articulos.map (product => {
                     return(
-                            <Cuadernos
+                            <ProductCard
                                 id={product.id}
                                 code={product.code}
                                 name={product.name}
@@ -21,8 +21,7 @@ const ListaArticulos = () => {
                                 quantity={product.quantity}
                                 inventoryStatus={product.inventoryStatus}
                                 rating={product.rating}
-                            ></Cuadernos>
-
+                                />
                     )
 
                 })}

@@ -220,6 +220,7 @@ LOGIN
 /*
 CARRITO
  */
-.carrito-table{
+.p-datatable{
   border: 1px solid #e9ecef;
+  box-shadow: 5px 5px 5px lightgray;
 }

@@ -3,7 +3,7 @@ import { Button } from 'primereact/button';
 import { AppContext } from '../../../AppContext';
 
 
-export const Cuadernos = (props) => {
+export const ProductCard = (props) => {
     const [cart, setCart] = useContext(AppContext)
 
     /*const[{carrito}, dispatch] = useStateValue()
@@ -25,7 +25,7 @@ export const Cuadernos = (props) => {
     }
     return (
         <div>
-                <div id={props.id} className="tarjeta">
+                <div id={props.id} className="tarjeta p-card">
                     <a>
                         <img src={props.image}/>
                         <h3>{props.name}</h3>
@@ -33,11 +33,8 @@ export const Cuadernos = (props) => {
                         <p>${props.price}</p>
                     </a>
                             
-                    <p>
-                        <Button onClick={agregarCarrito}>
-                            Añadir a carrito
-                        </Button>
-                    </p>
+                        <Button label="Ver" style={{marginRight: '.25em'}} className="p-button-secondary"/>
+                        <Button label="Agregar al carrito" icon="pi pi-shopping-cart" onClick={agregarCarrito}/>
                 </div>
         </div>
     )
