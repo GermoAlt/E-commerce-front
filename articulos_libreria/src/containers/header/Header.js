@@ -29,8 +29,6 @@ export default function Header(props) {
     }
 
     const menuItemAdminTemplate = (icon, path, item, options) => {
-        console.log(props)
-        console.log(props.isLoggedIn)
         return (
             <li className={`p-menuitem ${props.isLoggedIn === "admin" ? "" : "hidden"}`}>
                 <Link to={`${path}`} className={"p-menuitem-link"}>
