@@ -101,6 +101,7 @@ MAIN CONTENT
 */
 .mainContent{
   margin-top:25px;
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 1024px) {
   .mainContent {
@@ -217,9 +218,24 @@ LOGIN
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.tarjeta > a > img {
+  height: 100px;
+  width: 100%;
+}
+
 /*
 CARRITO
  */
-.carrito-table{
+.p-datatable{
   border: 1px solid #e9ecef;
+  box-shadow: 5px 5px 5px lightgray;
 }
+
+/*
+PRODUCT DETAILS
+ */
+
+.product-details-breadcrumb{
+  margin-bottom: 25px;
+}
+

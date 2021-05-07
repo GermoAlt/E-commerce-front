@@ -3,6 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import TransactionDialog from "./TransactionDialog";
 import Transactions from "../../../resources/json/transactions.json";
+import {Redirect} from "react-router";
 
 const detailsBodyTemplate = (rowdata) => {
     return (
@@ -13,7 +14,10 @@ const detailsBodyTemplate = (rowdata) => {
 }
 
 export default function TransactionLog(props) {
-    const [transactions, setTransactions] = useState(Transactions.data);
+    const [transactions] = useState(Transactions.data);
+    if(props.isLoggedIn !== "admin"){
+        return <Redirect to={"/"}/>
+    }
     return (
         <div className={"transaction-log"}>
             <DataTable value={transactions} dataKey="idTransaction" paginator rows={10} rowsPerPageOptions={[5, 10, 25]} className="datatable-responsive">

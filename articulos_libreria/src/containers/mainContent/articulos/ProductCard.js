@@ -1,10 +1,12 @@
 import React, {useContext} from 'react';
 import { Button } from 'primereact/button';
 import { AppContext } from '../../../AppContext';
+import {useHistory} from "react-router";
 
 
-export const Cuadernos = (props) => {
+export const ProductCard = (props) => {
     const [cart, setCart] = useContext(AppContext)
+    const history = useHistory();
 
     /*const[{carrito}, dispatch] = useStateValue()
     const agregarCarrito = () => {
@@ -23,22 +25,24 @@ export const Cuadernos = (props) => {
       const cuaderno = {props};
         setCart(carritoActual => [...carritoActual, cuaderno.props])
     }
+
+    const redirect = (id) => {
+        history.push(`/producto/${id}`);
+    }
+
+
     return (
         <div>
-                <div id={props.id} className="tarjeta">
-                    <a>
-                        <img src={props.image}/>
-                        <h3>{props.name}</h3>
-                        <p>{props.description}</p>  
-                        <p>${props.price}</p>
-                    </a>
-                            
-                    <p>
-                        <Button onClick={agregarCarrito}>
-                            Añadir a carrito
-                        </Button>
-                    </p>
-                </div>
+            <div id={props.id} className="tarjeta p-card">
+                <a>
+                    <img src={props.image}/>
+                    <h3>{props.name}</h3>
+                    <p>${props.price}</p>
+                </a>
+
+                    <Button label="Ver" style={{marginRight: '.25em'}} className="p-button-secondary" onClick={() => redirect(props.id)}/>
+                    <Button label="Agregar al carrito" icon="pi pi-shopping-cart" onClick={agregarCarrito}/>
+            </div>
         </div>
     )
 }

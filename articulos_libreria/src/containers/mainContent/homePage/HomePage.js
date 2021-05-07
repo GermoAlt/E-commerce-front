@@ -1,6 +1,6 @@
 import React from "react";
 import CarouselPrincipal from "./CarouselPrincipal";
-import Ofertas from "./Ofertas";
+import Ofertas from "../articulos/Ofertas";
 
 export default function HomePage() {
     return (

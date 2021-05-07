@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
 import { Rating } from 'primereact/rating';
 import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -16,8 +15,9 @@ import articulosJson from '../../../resources/json/products.json';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import {Redirect} from "react-router";
 
-const ProductPanel = () => {
+const ProductPanel = (props) => {
 
     let articuloVacio = {
         id: null,
@@ -280,27 +280,32 @@ const ProductPanel = () => {
         </div>
     );
 
+    if(props.isLoggedIn !== "admin"){
+        return <Redirect to={"/"}/>
+    }
+
     return (
+
         <div className="p-grid crud-demo">
             <div className="p-col-12">
                 <div className="card">
                     <Toast ref={toast} />
-                    <Toolbar className="p-mb-4" left={leftToolbarTemplate}></Toolbar>
+                    <Toolbar className="p-mb-4" left={leftToolbarTemplate}/>
 
                     <DataTable ref={dt} value={products} selection={articulosSeleccionados} onSelectionChange={(e) => agregarArticulosSeleccionados(e.value)}
                         dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]} className="datatable-responsive"
                         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} productos"
                         globalFilter={globalFilter} emptyMessage="No se encontraron artículos" header={header}>
-                        <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-                        <Column field="code" header="Code" sortable body={codeBodyTemplate}></Column>
-                        <Column field="name" header="Name" sortable body={nameBodyTemplate}></Column>
-                        <Column header="Image" body={imageBodyTemplate}></Column>
-                        <Column field="price" header="Price" body={priceBodyTemplate} sortable></Column>
-                        <Column field="category" header="Category" sortable body={categoryBodyTemplate}></Column>
-                        <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column>
-                        <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable></Column>
-                        <Column body={actionBodyTemplate}></Column>
+                        <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}/>
+                        <Column field="code" header="Code" sortable body={codeBodyTemplate}/>
+                        <Column field="name" header="Name" sortable body={nameBodyTemplate}/>
+                        <Column header="Image" body={imageBodyTemplate}/>
+                        <Column field="price" header="Price" body={priceBodyTemplate} sortable/>
+                        <Column field="category" header="Category" sortable body={categoryBodyTemplate}/>
+                        <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable/>
+                        <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable/>
+                        <Column body={actionBodyTemplate}/>
                     </DataTable>
 
                     <Dialog visible={productDialog} style={{ width: '450px' }} header="Detalles del artículo" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialogo}>

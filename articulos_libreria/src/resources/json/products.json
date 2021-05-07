@@ -1,14 +1,14 @@
 {
   "data": [
-      {"id": "1000","code": "f230fh0g3","name": "Bamboo Watch","description": "Product Description","image": "bamboo-watch.jpg","price": 65,"category": "Accessories","quantity": 24,"inventoryStatus": "INSTOCK","rating": 5},
-      {"id": "1001","code": "nvklal433","name": "Black Watch","description": "Product Description","image": "black-watch.jpg","price": 72,"category": "Accessories","quantity": 61,"inventoryStatus": "INSTOCK","rating": 4},
-      {"id": "1002","code": "zz21cz3c1","name": "Blue Band","description": "Product Description","image": "blue-band.jpg","price": 79,"category": "Fitness","quantity": 2,"inventoryStatus": "LOWSTOCK","rating": 3},
-      {"id": "1003","code": "244wgerg2","name": "Blue T-Shirt","description": "Product Description","image": "blue-t-shirt.jpg","price": 29,"category": "Clothing","quantity": 25,"inventoryStatus": "INSTOCK","rating": 5},
-      {"id": "1004","code": "h456wer53","name": "Bracelet","description": "Product Description","image": "bracelet.jpg","price": 15,"category": "Accessories","quantity": 73,"inventoryStatus": "INSTOCK","rating": 4},
-      {"id": "1005","code": "av2231fwg","name": "Brown Purse","description": "Product Description","image": "brown-purse.jpg","price": 120,"category": "Accessories","quantity": 0,"inventoryStatus": "OUTOFSTOCK","rating": 4},
-      {"id": "1006","code": "bib36pfvm","name": "Chakra Bracelet","description": "Product Description","image": "chakra-bracelet.jpg","price": 32,"category": "Accessories","quantity": 5,"inventoryStatus": "LOWSTOCK","rating": 3},
-      {"id": "1007","code": "mbvjkgip5","name": "Galaxy Earrings","description": "Product Description","image": "galaxy-earrings.jpg","price": 34,"category": "Accessories","quantity": 23,"inventoryStatus": "INSTOCK","rating": 5},
-      {"id": "1008","code": "vbb124btr","name": "Game Controller","description": "Product Description","image": "game-controller.jpg","price": 99,"category": "Electronics","quantity": 2,"inventoryStatus": "LOWSTOCK","rating": 4},
-      {"id": "1009","code": "cm230f032","name": "Gaming Set","description": "Product Description","image": "gaming-set.jpg","price": 299,"category": "Electronics","quantity": 63,"inventoryStatus": "INSTOCK","rating": 3}
+      {"id": "1000","code": "f230fh0g3","name": "Cuaderno","image": "/cuaderno.png","price": 65,"category": "Cuadernos","quantity": 24,"inventoryStatus": "INSTOCK","rating": 5,"description": "Product Description"},
+      {"id": "1001","code": "nvklal433","name": "Pack Carpetas","image": "/pack-carpetas.jpg","price": 72,"category": "Carpetas","quantity": 61,"inventoryStatus": "INSTOCK","rating": 4,"description": "Product Description"},
+      {"id": "1002","code": "zz21cz3c1","name": "Pack Lapiceras","image": "/pack-lapiceras.jpg","price": 79,"category": "Escritura","quantity": 2,"inventoryStatus": "LOWSTOCK","rating": 3,"description": "Product Description"},
+      {"id": "1003","code": "244wgerg2","name": "Resma de Papel","image": "/resma.jpg","price": 29,"category": "Insumos de Oficina","quantity": 25,"inventoryStatus": "INSTOCK","rating": 5,"description": "Product Description"},
+      {"id": "1004","code": "h456wer53","name": "Impresora","image": "/impresora.jpg","price": 15,"category": "Otros","quantity": 73,"inventoryStatus": "INSTOCK","rating": 4,"description": "Product Description"},
+      {"id": "1005","code": "av2231fwg","name": "Agenda","image": "/agenda.jpg","price": 120,"category": "Cuadernos","quantity": 0,"inventoryStatus": "OUTOFSTOCK","rating": 4,"description": "Product Description"},
+      {"id": "1006","code": "bib36pfvm","name": "Folios","image": "/folios.jpg","price": 32,"category": "Insumos de Oficina","quantity": 5,"inventoryStatus": "LOWSTOCK","rating": 3,"description": "Product Description"},
+      {"id": "1007","code": "mbvjkgip5","name": "Tinta","image": "/tinta.jpg","price": 34,"category": "Tinta","quantity": 23,"inventoryStatus": "INSTOCK","rating": 5,"description": "Product Description"},
+      {"id": "1008","code": "vbb124btr","name": "Pack Marcadores","image": "/pack-marcadores.jpg","price": 99,"category": "Escritura","quantity": 2,"inventoryStatus": "LOWSTOCK","rating": 4,"description": "Product Description"},
+      {"id": "1009","code": "cm230f032","name": "Tijeras","image": "/tijeras.jpg","price": 299,"category": "Insumos de Oficina","quantity": 63,"inventoryStatus": "INSTOCK","rating": 3,"description": "Product Description"}
   ]
 }

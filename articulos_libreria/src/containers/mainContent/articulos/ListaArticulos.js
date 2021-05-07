@@ -1,16 +1,20 @@
 import React, { useState} from 'react';
 import articulosJson from '../../../resources/json/products.json';
-import {Cuadernos} from './Cuadernos';
+import {ProductCard} from './ProductCard';
+import {useParams} from "react-router";
 
 const ListaArticulos = () => {
     const [articulos] = useState(articulosJson.data);
-
+    const categoria = useParams().category;
+    const art = articulos.filter((item) => item.category.toLowerCase().split(" ")[0] === categoria)
+console.log(categoria)
+console.log(articulos)
     return (
         <div>
             <div className="grid">
-                {articulos.map (product => {
+                {art.map (product => {
                     return(
-                            <Cuadernos
+                            <ProductCard
                                 id={product.id}
                                 code={product.code}
                                 name={product.name}
@@ -21,8 +25,7 @@ const ListaArticulos = () => {
                                 quantity={product.quantity}
                                 inventoryStatus={product.inventoryStatus}
                                 rating={product.rating}
-                            ></Cuadernos>
-
+                                />
                     )
 
                 })}

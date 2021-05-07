@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
-import { Toolbar } from 'primereact/toolbar';
 import { Dialog } from 'primereact/dialog';
 import { Link } from 'react-router-dom'
 import 'primereact/resources/themes/saga-blue/theme.css';
@@ -81,7 +80,6 @@ const Carrito = () => {
         toast.current.show({ severity: 'success', summary: 'Éxito', detail: 'Artículos eliminados', life: 3000 });
     }
 
-
     const nameBodyTemplate = (rowData) => {
         return (
             <div>
@@ -89,15 +87,6 @@ const Carrito = () => {
                 {rowData.name}
             </div>
         );
-    }
-
-    const imageBodyTemplate = (rowData) => {
-        return (
-            <div>
-                <span className="p-column-title"></span>
-                <img src={`assets/demo/images/product/${rowData.image}`} alt={rowData.image} className="product-image" />
-            </div>
-        )
     }
 
     const priceBodyTemplate = (rowData) => {
@@ -114,15 +103,6 @@ const Carrito = () => {
             <div>
                 <span className="p-column-title"></span>
                 {rowData.category}
-            </div>
-        );
-    }
-
-    const ratingBodyTemplate = (rowData) => {
-        return (
-            <div>
-                <span className="p-column-title"></span>
-                <Rating value={rowData.rating} readonly cancel={false} />
             </div>
         );
     }
