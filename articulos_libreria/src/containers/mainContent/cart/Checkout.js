@@ -38,15 +38,16 @@ const Checkout = () =>{
     return (
         
         <div className="steps-demo">
-            <div>
-                <span>Artículos en carrito: {products.length}</span>
-                <br />
-                <span>Precio: ${precioTotal}</span>
-            </div>
+
             <Toast ref={toast}></Toast>
 
             <div className="card">
-                <h5>blablablabla</h5>
+                <h5>
+                    <span>Artículos en carrito: {products.length}</span>
+                        <br />
+                    <span>Total: ${precioTotal}</span>
+                </h5>
+
                 <Steps model={items} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false}/>
                 <Step1 visible={activeIndex}/>
                 <Step2 visible={activeIndex}/>
