@@ -1,6 +1,6 @@
 import React, { useState, useContext} from 'react';
 import articulosJson from '../../../resources/json/products.json';
-import {Cuadernos} from './cuadernos';
+import {Cuadernos} from './Cuadernos';
 
 const ListaArticulos = () => {
     const [articulos] = useState(articulosJson.data);
