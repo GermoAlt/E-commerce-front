@@ -14,7 +14,7 @@ const detailsBodyTemplate = (rowdata) => {
 }
 
 export default function TransactionLog(props) {
-    const [transactions, setTransactions] = useState(Transactions.data);
+    const [transactions] = useState(Transactions.data);
     if(props.isLoggedIn !== "admin"){
         return <Redirect to={"/"}/>
     }

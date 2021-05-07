@@ -101,6 +101,7 @@ MAIN CONTENT
 */
 .mainContent{
   margin-top:25px;
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 1024px) {
   .mainContent {
@@ -223,4 +224,12 @@ CARRITO
 .p-datatable{
   border: 1px solid #e9ecef;
   box-shadow: 5px 5px 5px lightgray;
+}
+
+/*
+PRODUCT DETAILS
+ */
+
+.product-details-breadcrumb{
+  margin-bottom: 25px;
 }

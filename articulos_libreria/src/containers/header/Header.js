@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
 import { Toolbar } from 'primereact/toolbar';
@@ -15,7 +15,7 @@ import { AppContext } from '../../AppContext';
 
 
 export default function Header(props) {
-    const [carritoCantidad, setCart] = useContext(AppContext)
+    const [carritoCantidad] = useContext(AppContext)
 
     const menuItemTemplate = (icon, path, item, options) => {
         return (
@@ -51,9 +51,32 @@ export default function Header(props) {
             "items": [
                 {
                     "label": "Cuadernos",
-                    "icon": "pi pi-book",
                     template: (item, options) => {
-                        return menuItemTemplate("pi-book", "/articulos", item, options);
+                        return menuItemTemplate("pi-book", "/articulos/cuadernos", item, options);
+                    }
+                },
+                {
+                    "label": "Carpetas",
+                    template: (item, options) => {
+                        return menuItemTemplate("pi-envelope", "/articulos/carpetas", item, options);
+                    }
+                },
+                {
+                    "label": "Escritura",
+                    template: (item, options) => {
+                        return menuItemTemplate("pi-pencil", "/articulos/escritura", item, options);
+                    }
+                },
+                {
+                    "label": "Insumos de Oficina",
+                    template: (item, options) => {
+                        return menuItemTemplate("pi-paperclip", "/articulos/insumos", item, options);
+                    }
+                },
+                {
+                    "label": "Otros",
+                    template: (item, options) => {
+                        return menuItemTemplate("pi-print", "/articulos/otros", item, options);
                     }
                 }
             ]
