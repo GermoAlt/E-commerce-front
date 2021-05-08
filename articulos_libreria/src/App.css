@@ -371,10 +371,51 @@ DATAVIEW
   padding-bottom: 50px;
 }
 
+.featured-panel-title{
+  font-size: 35px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /*
 CHECKOUT
  */
 
 .checkout-accordion{
   margin-top:25px;
+}
+
+.checkout-accordion-tab-content-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-accordion-input{
+  max-width:30vw;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.checkout-accordion-tab-button{
+  margin-top: 25px !important;
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+}
+
+.cart-item-list-step-1{
+  display: flex;
+  margin-top: 30px;
+}
+
+/*
+FOOTER
+ */
+
+.app-footer{
+  position: absolute;
+  width: 100%;
+  color: #0D89EC;
+  height: 50vh;
+  bottom: 0;
+  z-index: 1000;
 }

@@ -14,6 +14,7 @@ import MainContent from "./containers/mainContent/MainContent";
 
 
 import { Provider } from './AppContext'
+import Footer from "./containers/footer/footer";
 
 export default function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(null);

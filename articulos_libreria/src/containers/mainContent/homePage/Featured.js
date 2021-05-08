@@ -98,10 +98,13 @@ const Featured = () => {
     const renderHeader = () => {
         return (
             <div className="p-grid p-nogutter">
-                <div className="p-col-6" style={{textAlign: 'left'}}>
+                <div className="p-col-5" style={{textAlign: 'left'}}>
                     <Dropdown options={sortOptions} value={sortKey} optionLabel="label" placeholder="Ordenar por precio" onChange={onSortChange}/>
                 </div>
-                <div className="p-col-6" style={{textAlign: 'right'}}>
+                <div className={"p-col-2"} style={{textAlign: 'center'}}>
+                    <p className={"featured-panel-title"}>Destacados</p>
+                </div>
+                <div className="p-col-5" style={{textAlign: 'right'}}>
                     <DataViewLayoutOptions layout={layout} onChange={(e) => setLayout(e.value)} />
                 </div>
             </div>

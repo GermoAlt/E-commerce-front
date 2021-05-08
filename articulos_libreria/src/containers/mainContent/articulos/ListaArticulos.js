@@ -7,8 +7,6 @@ const ListaArticulos = () => {
     const [articulos] = useState(articulosJson.data);
     const categoria = useParams().category;
     const art = articulos.filter((item) => item.category.toLowerCase().split(" ")[0] === categoria)
-console.log(categoria)
-console.log(articulos)
     return (
         <div>
             <div className="grid">

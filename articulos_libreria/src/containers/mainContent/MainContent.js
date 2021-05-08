@@ -1,7 +1,6 @@
 import React from "react";
 import HomePage from "./homePage/HomePage";
 import { Switch, Route } from "react-router-dom";
-import Ofertas from "./articulos/Ofertas";
 import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
 import ListaArticulos from "./articulos/ListaArticulos";
@@ -19,9 +18,6 @@ export default function MainContent(props){
            </Route>
            <Route path="/articulos/:category">
                <ListaArticulos />
-           </Route>
-           <Route path="/ofertas">
-               <Ofertas />
            </Route>
            <Route path="/transacciones">
                <TransactionLog isLoggedIn={props.isLoggedIn}/>

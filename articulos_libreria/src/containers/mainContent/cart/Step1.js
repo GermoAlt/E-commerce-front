@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { AppContext } from '../../../AppContext';
+import {Button} from 'primereact/button'
 
 const Step1 = (props) => {
 
@@ -11,7 +12,8 @@ const Step1 = (props) => {
     return (
 
         <div className={`${props.visible !== 0 ? "hidden" : ""}`}>
-            <div>
+            <Button className={"checkout-accordion-tab-button"} iconPos={"right"} icon={"pi pi-arrow-circle-right"} label={"Siguiente"}/>
+            <div className={"cart-item-list-step-1"}>
                 {products.map (product => {
                     return(
                         <div key={product.id} className="tarjeta">
@@ -25,7 +27,6 @@ const Step1 = (props) => {
                     )
                 })}
             </div>
-
 
         </div>
     )

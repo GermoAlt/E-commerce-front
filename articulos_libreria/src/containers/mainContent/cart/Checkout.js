@@ -42,6 +42,10 @@ const Checkout = () =>{
         }
     ];
 
+    const changeToStep = (step) => {
+        setActiveIndex(step);
+    }
+
     return (
         
         <div className="steps-demo">

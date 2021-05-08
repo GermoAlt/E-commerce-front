@@ -1,8 +1,13 @@
 import React from "react";
+import {Button} from "primereact/button";
 const Step3 = (props) => {
     return (
         <div className={`${props.visible !== 2 ? "hidden" : ""}`}>
-            <p>step 3 </p>
+            <h5>¡Su compra ha sido realizada con éxito!</h5>
+
+            <h4>Su número de orden es 00053287</h4>
+
+            <h5>¡Muchas gracias!</h5>
         </div>
     )
 }

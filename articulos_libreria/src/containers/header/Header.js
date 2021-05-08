@@ -85,9 +85,9 @@ export default function Header(props) {
             ]
         },
         {
-            "label": "Ofertas",
+            "label": "Quienes somos",
             template: (item, options) => {
-                return menuItemTemplate("pi-tags", "/ofertas", item, options);
+                return menuItemTemplate("pi-heart", "/nosotros", item, options);
             }
         },
         {
