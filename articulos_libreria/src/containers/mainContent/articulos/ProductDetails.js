@@ -10,7 +10,6 @@ import { Button } from 'primereact/button';
 const ProductDetails = () => {
     const id = useParams().id;
     const item = products.data.filter((item) => item.id === id)[0];
-    console.log("item", item)
     const items = [
         { label: 'Artículos' },
         { label: `${item.category}`},

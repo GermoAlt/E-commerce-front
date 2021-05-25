@@ -7,7 +7,6 @@ import {useState} from "react";
 const TransactionDialog = (props) => {
     const [displayDialog, setDisplayDialog] = useState(false);
     const transactionDetails = props.transaction
-    console.log(transactionDetails)
     return (
         <div>
             <Button icon="pi pi-search" className={"p-button-rounded p-mr-2"} onClick={() => setDisplayDialog(true)} />

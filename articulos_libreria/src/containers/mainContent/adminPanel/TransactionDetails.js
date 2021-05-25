@@ -3,7 +3,6 @@ import {DataTable} from "primereact/datatable";
 import React from "react";
 
 const TransactionDetails = (props) => {
-    console.log(props)
     return (
         <div>
             <DataTable value={props.transaction} dataKey="idTransaction" paginator rows={10} rowsPerPageOptions={[5, 10, 25]} className="datatable-responsive">
