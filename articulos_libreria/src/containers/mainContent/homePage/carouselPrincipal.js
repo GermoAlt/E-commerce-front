@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, { useState } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button'
 import  productosJson  from '../../../resources/json/products.json'

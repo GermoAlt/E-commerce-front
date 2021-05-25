@@ -1,14 +1,13 @@
-import React, {useContext, useState} from "react";
+import React, { useState } from "react";
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
-import productsJson from '../../../resources/json/products.json'
 import {useHistory} from "react-router";
 
-const Featured = () => {
+const ItemPanel = (props) => {
     const history = useHistory();
-    const [products, setProducts] = useState(productsJson.data);
+    const products = props.products;
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
     const [sortOrder, setSortOrder] = useState(null);
@@ -98,13 +97,13 @@ const Featured = () => {
     const renderHeader = () => {
         return (
             <div className="p-grid p-nogutter">
-                <div className="p-col-5" style={{textAlign: 'left'}}>
+                <div className="p-col-3" style={{textAlign: 'left'}}>
                     <Dropdown options={sortOptions} value={sortKey} optionLabel="label" placeholder="Ordenar por precio" onChange={onSortChange}/>
                 </div>
-                <div className={"p-col-2"} style={{textAlign: 'center'}}>
-                    <p className={"featured-panel-title"}>Destacados</p>
+                <div className={"p-col-6"} style={{textAlign: 'center'}}>
+                    <p className={"featured-panel-title"}>{props.categoria}</p>
                 </div>
-                <div className="p-col-5" style={{textAlign: 'right'}}>
+                <div className="p-col-3" style={{textAlign: 'right'}}>
                     <DataViewLayoutOptions layout={layout} onChange={(e) => setLayout(e.value)} />
                 </div>
             </div>
@@ -123,4 +122,4 @@ const Featured = () => {
     )
 }
 
-export default Featured;
+export default ItemPanel;
