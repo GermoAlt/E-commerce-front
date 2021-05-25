@@ -1,4 +1,4 @@
-# TPO_API
+# TPO Aplicaciones Interactivas
 Trabajo Practico Grupo 20
 
 Tema asignado: Articulos libreria
