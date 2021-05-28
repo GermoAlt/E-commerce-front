@@ -9,7 +9,7 @@ const ListaArticulos = () => {
     const art = articulos.filter((item) => item.category.toLowerCase().split(" ")[0] === categoria)
     return (
         <div>
-            <ItemPanel products={art} categoria={art[0].category}/>
+            <ItemPanel products={art} title={art[0].category}/>
         </div>
     )
 }

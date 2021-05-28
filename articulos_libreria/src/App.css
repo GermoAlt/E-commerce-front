@@ -86,6 +86,10 @@ HEADER
   border-radius: 25px;
 }
 
+.p-toolbar {
+  padding: 0px !important;
+}
+
 .p-toolbar-group-left{
   flex-grow: 4;
   min-width: 400px;
@@ -311,13 +315,18 @@ DATAVIEW
 
 .product-grid-item-content{
   text-align: center;
+  width: 100%;
 }
 
-.product-grid-item-content > img {
-  height: 20vh;
-  width: 75%;
-  box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
-  margin: 2rem 0;
+.product-grid-item-image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.product-grid-item-image-container > img{
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
 }
 
 .p-dataview{
@@ -350,6 +359,7 @@ DATAVIEW
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .product-price{
