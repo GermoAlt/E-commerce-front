@@ -93,6 +93,7 @@ HEADER
 .p-toolbar-group-left{
   flex-grow: 4;
   min-width: 400px;
+  padding-left: 20px;
 }
 
 .p-toolbar-group-right{
