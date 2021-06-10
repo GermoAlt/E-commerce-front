@@ -1,4 +1,5 @@
-import '../../App.css';
+import './header.css'
+
 import React, {useContext, useState} from "react";
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
@@ -11,11 +12,11 @@ import classNames from "classnames";
 import articulosJson from '../../resources/json/products.json';
 import logo from '../../resources/images/logo.svg';
 import Login from "./login/Login";
-import { AppContext } from '../../AppContext';
+import { CartContext } from '../../contexts/CartContext';
 
 
 export default function Header(props) {
-    const [carritoCantidad] = useContext(AppContext)
+    const [carritoCantidad] = useContext(CartContext)
 
     const [products, setProducts] = useState(articulosJson.data);
     const [globalFilter, setGlobalFilter] = useState(null);

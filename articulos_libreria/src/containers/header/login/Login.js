@@ -1,15 +1,19 @@
-import React, {useState} from "react";
+import './login.css'
+
+import React, {useContext, useState} from "react";
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from "../../../resources/images/logo.svg";
 import AuthButton from "./AuthButton";
+import LoginContext from "../../../contexts/LoginContext";
 
 const Login = (props) => {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [username, setUsermame] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
 
     const dialogFuncMap = {
         'displayBasic': setDisplayBasic,
@@ -35,7 +39,7 @@ const Login = (props) => {
     }
 
     const handleSuccessfulLogin = (value) => {
-        props.setIsLoggedIn(value);
+        setIsLoggedIn(value);
         setError(false);
         onHide("displayBasic");
     }

@@ -1,0 +1,33 @@
+/*
+LOGIN
+ */
+.login-dialog{
+    width: 20vw;
+}
+
+.login-dialog-logo{
+    margin-top: 30px;
+}
+
+.login-dialog-header-text{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.login-dialog-content-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-dialog-input{
+    margin: 20px auto;
+    display: inline-block;
+
+}
+
+.login-dialog-error-message{
+    display: flex;
+    margin: auto;
+}

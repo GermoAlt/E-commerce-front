@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
-import { AppContext } from '../../../AppContext';
+import { CartContext } from '../../../contexts/CartContext';
 import {Button} from 'primereact/button'
 
 const Step1 = (props) => {
 
 
-    const [products, setProducts] = useContext(AppContext)
+    const [products, setProducts] = useContext(CartContext)
 
     const precioTotal = products.reduce((acc, curr) => acc + curr.price, 0);
 

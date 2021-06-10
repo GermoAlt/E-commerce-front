@@ -2,8 +2,8 @@ import React, {useContext} from "react";
 import {useParams} from "react-router";
 import { BreadCrumb } from 'primereact/breadcrumb';
 import { Panel } from 'primereact/panel';
-import products from "../../../resources/json/products.json"
-import { AppContext } from '../../../AppContext';
+import products from "../../../../resources/json/products.json"
+import { CartContext } from '../../../../contexts/CartContext';
 import { Button } from 'primereact/button';
 
 
@@ -15,7 +15,7 @@ const ProductDetails = () => {
         { label: `${item.category}`},
     ];
 
-    const [cart, setCart] = useContext(AppContext)
+    const [cart, setCart] = useContext(CartContext)
 
     const agregarCarrito = () => {
         const prod = item;

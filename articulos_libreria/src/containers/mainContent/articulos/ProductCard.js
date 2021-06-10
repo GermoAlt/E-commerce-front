@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import { Button } from 'primereact/button';
-import { AppContext } from '../../../AppContext';
+import { CartContext } from '../../../contexts/CartContext';
 import {useHistory} from "react-router";
 
 
 export const ProductCard = (props) => {
-    const [cart, setCart] = useContext(AppContext)
+    const [cart, setCart] = useContext(CartContext)
     const history = useHistory();
     
     const agregarCarrito = () => {

@@ -3,10 +3,10 @@ import HomePage from "./homePage/HomePage";
 import { Switch, Route } from "react-router-dom";
 import TransactionLog from "./adminPanel/TransactionLog";
 import ProductPanel from "./adminPanel/ProductPanel";
-import ListaArticulos from "./articulos/ListaArticulos";
+import ListaArticulos from "./articulos/itemList/ListaArticulos";
 import Carrito from "./cart/Carrito";
-import Checkout from "./cart/Checkout";
-import ProductDetails from "./articulos/ProductDetails";
+import Checkout from "./checkout/Checkout";
+import ProductDetails from "./articulos/productDetails/ProductDetails";
 import {Redirect} from "react-router";
 
 export default function MainContent(props){

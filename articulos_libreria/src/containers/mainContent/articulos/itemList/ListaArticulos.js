@@ -1,5 +1,7 @@
+import './itemList.css'
+
 import React, { useState} from 'react';
-import articulosJson from '../../../resources/json/products.json';
+import articulosJson from '../../../../resources/json/products.json';
 import {useParams} from "react-router";
 import ItemPanel from "./ItemPanel";
 

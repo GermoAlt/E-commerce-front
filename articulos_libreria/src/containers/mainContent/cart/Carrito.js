@@ -1,16 +1,14 @@
+import './cart.css'
+
 import React, { useState, useRef, useContext } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { Rating } from 'primereact/rating';
 import { Dialog } from 'primereact/dialog';
 import { Link } from 'react-router-dom'
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
 
-import { AppContext } from '../../../AppContext';
+import { CartContext } from '../../../contexts/CartContext';
 
 const Carrito = () => {
 
@@ -26,7 +24,7 @@ const Carrito = () => {
         inventoryStatus: 'INSTOCK'
     };
 
-    const [products, setProducts] = useContext(AppContext)
+    const [products, setProducts] = useContext(CartContext)
 
   
 

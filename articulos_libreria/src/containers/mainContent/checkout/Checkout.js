@@ -1,13 +1,15 @@
+import './checkout.css'
+
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import {Steps} from 'primereact/steps';
 import { Toast } from 'primereact/toast';
-import { AppContext } from '../../../AppContext';
+import { CartContext } from '../../../contexts/CartContext';
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 
 const Checkout = () =>{
-    const [products, setProducts] = useContext(AppContext)
+    const [products, setProducts] = useContext(CartContext)
 
     const precioTotal = products.reduce((acc, curr) => acc + curr.price, 0);
 

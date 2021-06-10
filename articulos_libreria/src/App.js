@@ -12,7 +12,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./containers/header/Header";
 import MainContent from "./containers/mainContent/MainContent";
 
-import { Provider } from './AppContext'
+import { Provider } from './contexts/CartContext'
 
 export default function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(null);
