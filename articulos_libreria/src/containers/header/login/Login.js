@@ -6,14 +6,14 @@ import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import logo from "../../../resources/images/logo.svg";
 import AuthButton from "./AuthButton";
-import LoginContext from "../../../contexts/LoginContext";
+import useUser from "../../../hooks/useUser";
 
 const Login = (props) => {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [username, setUsermame] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
+    const {user, changeUser} = useUser();
 
     const dialogFuncMap = {
         'displayBasic': setDisplayBasic,
@@ -39,7 +39,7 @@ const Login = (props) => {
     }
 
     const handleSuccessfulLogin = (value) => {
-        setIsLoggedIn(value);
+        changeUser({type: value});
         setError(false);
         onHide("displayBasic");
     }

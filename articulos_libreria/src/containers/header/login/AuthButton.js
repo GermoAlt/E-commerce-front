@@ -3,13 +3,14 @@ import { Button } from "primereact/button";
 import {TieredMenu} from "primereact/tieredmenu"
 import {Link} from "react-router-dom";
 import classNames from "classnames";
-import LoginContext from "../../../contexts/LoginContext";
+import UserContext from "../../../contexts/UserContext";
+import useUser from "../../../hooks/useUser";
 
 
 
 const AuthButton = props => {
     const menu = useRef(null);
-    const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext)
+    const {user, changeUser} = useUser();
 
     const items = [
         {
@@ -51,7 +52,7 @@ const AuthButton = props => {
 
     const adminOptionTemplate = (icon, path, item, options) => {
         return (
-            <li className={`p-menuitem ${props.isLoggedIn === "admin" ? "" : "hidden"}`}>
+            <li className={`p-menuitem ${user.type === "admin" ? "" : "hidden"}`}>
                 <Link to={`${path}`} className={"p-menuitem-link"}>
                     <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
                     <span className={options.labelClassName}>{item.label}</span>
@@ -62,7 +63,7 @@ const AuthButton = props => {
 
     const userOptionTemplate = (icon, path, item, options) => {
         return (
-            <li className={`p-menuitem ${props.isLoggedIn === "admin" ? "hidden" : ""}`}>
+            <li className={`p-menuitem ${user.type === "admin" ? "hidden" : ""}`}>
                 <Link to={`${path}`} className={"p-menuitem-link"}>
                     <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
                     <span className={options.labelClassName}>{item.label}</span>
@@ -74,11 +75,11 @@ const AuthButton = props => {
     const logoutTemplate = (icon, path, item, options) => {
         return (
             <li className={`p-menuitem`}>
-                <Button label="Logout" icon="pi pi-sign-out" className="p-button-rounded p-mr-2" onClick={() => setIsLoggedIn(null)}/>;
+                <Button label="Logout" icon="pi pi-sign-out" className="p-button-rounded p-mr-2" onClick={() => changeUser({type:"guest"})}/>;
             </li>
         )
     }
-    if (isLoggedIn) {
+    if (user.type !== "guest") {
         return (
             <div>
                 <TieredMenu model={items} className={"pull-left"} popup ref={menu} />

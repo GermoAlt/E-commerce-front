@@ -12,7 +12,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./containers/header/Header";
 import MainContent from "./containers/mainContent/MainContent";
 
-import { Provider } from './contexts/CartContext'
+import { Provider as CartProvider } from './contexts/CartContext'
+import {UserProvider} from './contexts/UserContext'
 
 export default function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -21,13 +22,15 @@ export default function App() {
   return (
       <div className="App">
 
-          <Provider>
-            <Router>
-              <ScrollTop/>
-              <Header isLoggedIn={isLoggedIn} setIsLoggedIn={(value) => setIsLoggedIn(value)}/>
-              <MainContent isLoggedIn={isLoggedIn}/>
-            </Router>
-          </Provider>
+          <CartProvider>
+            <UserProvider>
+                <Router>
+                  <ScrollTop/>
+                      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={(value) => setIsLoggedIn(value)}/>
+                      <MainContent isLoggedIn={isLoggedIn}/>
+                </Router>
+            </UserProvider>
+          </CartProvider>
 
       </div>
   );
