@@ -3,7 +3,6 @@ import { Button } from "primereact/button";
 import {TieredMenu} from "primereact/tieredmenu"
 import {Link} from "react-router-dom";
 import classNames from "classnames";
-import UserContext from "../../../contexts/UserContext";
 import useUser from "../../../hooks/useUser";
 
 
@@ -75,7 +74,7 @@ const AuthButton = props => {
     const logoutTemplate = (icon, path, item, options) => {
         return (
             <li className={`p-menuitem`}>
-                <Button label="Logout" icon="pi pi-sign-out" className="p-button-rounded p-mr-2" onClick={() => changeUser({type:"guest"})}/>;
+                <Button label="Logout" icon="pi pi-sign-out" className="p-menuitem" onClick={() => changeUser({type:"guest"})}/>
             </li>
         )
     }
@@ -87,8 +86,8 @@ const AuthButton = props => {
             </div>
         )
     } else {
-        return <Button label="Login" icon="pi pi-sign-in" className="p-button-rounded p-mr-2" onClick={() => props.onClick('displayBasic')} />;
+        return <Button label="Login" icon="pi pi-sign-in" className="p-button-rounded p-mr-2" onClick={() => props.onClick('displayBasic')} />
     }
-};
+}
 
 export default AuthButton;
