@@ -18,7 +18,6 @@ import { CartContext } from '../../contexts/CartContext';
 export default function Header(props) {
     const [carritoCantidad] = useContext(CartContext)
 
-    const [products, setProducts] = useState(articulosJson.data);
     const [globalFilter, setGlobalFilter] = useState(null);
 
     const menuItemTemplate = (icon, path, item, options) => {
@@ -32,18 +31,8 @@ export default function Header(props) {
         )
     }
 
-    const menuItemAdminTemplate = (icon, path, item, options) => {
-        return (
-            <li className={`p-menuitem ${props.isLoggedIn === "admin" ? "" : "hidden"}`}>
-                <Link to={`${path}`} className={"p-menuitem-link"}>
-                    <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
-                    <span className={options.labelClassName}>{item.label}</span>
-                </Link>
-            </li>
-        )
-    }
-
-    const menuCategories = [{
+    const menuCategories = [
+        {
             "label": "Inicio",
             template: (item, options) => {
                 return menuItemTemplate("pi-home", "/", item, options);
@@ -90,18 +79,6 @@ export default function Header(props) {
             template: (item, options) => {
                 return menuItemTemplate("pi-heart", "/nosotros", item, options);
             }
-        },
-        {
-            "label": "Transacciones",
-            template: (item, options) => {
-                return menuItemAdminTemplate("pi-book", "/transacciones", item, options);
-            }
-        },
-        {
-            "label": "Modificar Productos",
-            template: (item, options) => {
-                return menuItemAdminTemplate("pi-sliders-v", "/gestionProductos", item, options);
-            }
         }]
 
     const leftContents = (
@@ -128,7 +105,7 @@ export default function Header(props) {
                     <Badge className={`${carritoCantidad.length === 0 ? "hidden" : ""}`} value={carritoCantidad.length}/>
                 </Button>
             </Link>
-            <Login isLoggedIn={props.isLoggedIn} setIsLoggedIn={(value) => {props.setIsLoggedIn(value)}}/>
+            <Login/>
         </React.Fragment>
     );
 

@@ -56,7 +56,7 @@ const Login = (props) => {
     )
     return (
         <div className={"login"}>
-            <AuthButton isLoggedIn={props.isLoggedIn} setIsLoggedIn={(value) => {props.setIsLoggedIn(value)}} onClick={onClick}/>
+            <AuthButton onClick={onClick}/>
             <Dialog className={"login-dialog"} footer={footer} visible={displayBasic} onHide={() => onHide('displayBasic')}
                     resizable={false} draggable={false} dismissableMask closable={false} showHeader={false}>
                 <div className={"login-dialog-content-container"}>

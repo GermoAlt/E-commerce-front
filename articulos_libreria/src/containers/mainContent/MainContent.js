@@ -20,10 +20,10 @@ export default function MainContent(props){
                <ListaArticulos />
            </Route>
            <Route path="/transacciones">
-               <TransactionLog isLoggedIn={props.isLoggedIn}/>
+               <TransactionLog/>
            </Route>
            <Route path="/gestionProductos">
-               <ProductPanel isLoggedIn={props.isLoggedIn}/>
+               <ProductPanel/>
            </Route>
            <Route path="/carrito" >
                 <Carrito />

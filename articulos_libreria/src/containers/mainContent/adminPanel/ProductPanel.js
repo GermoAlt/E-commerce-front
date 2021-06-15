@@ -16,6 +16,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import {Redirect} from "react-router";
+import useUser from "../../../hooks/useUser";
 
 const ProductPanel = (props) => {
 
@@ -42,6 +43,7 @@ const ProductPanel = (props) => {
     const [globalFilter, setGlobalFilter] = useState(null);
     const toast = useRef(null);
     const dt = useRef(null);
+    const {user, changeUser} = useUser();
 
 
 
@@ -280,7 +282,7 @@ const ProductPanel = (props) => {
         </div>
     );
 
-    if(props.isLoggedIn !== "admin"){
+    if(user.type !== "admin"){
         return <Redirect to={"/"}/>
     }
 

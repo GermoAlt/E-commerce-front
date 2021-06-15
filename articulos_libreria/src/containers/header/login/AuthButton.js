@@ -15,19 +15,19 @@ const AuthButton = props => {
         {
             label: 'Panel de Control',
             template: (item, options) => {
-                return adminOptionTemplate("", "", item, options)
+                return adminOptionTemplate("pi-sliders-v", "", "login-dropdown-option-top", item, options)
             },
             items:[
                 {
                     label:'ABM de Productos',
                     template: (item, options) => {
-                        return adminOptionTemplate("", "", item, options)
+                        return adminOptionTemplate("pi-power-off", "/gestionProductos", "login-dropdown-option-nested", item, options)
                     }
                 },
                 {
                     label: 'Log de Transacciones',
                     template: (item, options) => {
-                        return adminOptionTemplate("", "", item, options)
+                        return adminOptionTemplate("pi-power-off", "/transacciones", "login-dropdown-option-nested", item, options)
                     }
                 }
             ]
@@ -35,7 +35,7 @@ const AuthButton = props => {
         {
             label: 'Perfil',
             template: (item, options) => {
-                return userOptionTemplate("", "", item, options)
+                return userOptionTemplate("pi-power-off", "/perfil", item, options)
             }
         },
         {
@@ -43,22 +43,27 @@ const AuthButton = props => {
         },
         {
             label:'Log out',
+            command: () => {
+                changeUser({type:"guest"})
+            },
             template: (item, options) => {
                 return logoutTemplate("pi-power-off", "", item, options)
             }
         }
     ];
 
-    const adminOptionTemplate = (icon, path, item, options) => {
+    const adminOptionTemplate = (icon, path, nameClass, item, options) => {
         return (
-            <li className={`p-menuitem ${user.type === "admin" ? "" : "hidden"}`}>
-                <Link to={`${path}`} className={"p-menuitem-link"}>
+            <div className={` ${nameClass} ${user.type === "admin" ? "" : "hidden"}`}>
+                <Link to={`${path}`} className={`p-menuitem-link`}>
                     <span className={classNames(options.iconClassName, `pi pi-fw ${icon}`)}/>
                     <span className={options.labelClassName}>{item.label}</span>
                 </Link>
-            </li>
+            </div>
         )
     }
+
+
 
     const userOptionTemplate = (icon, path, item, options) => {
         return (
@@ -73,8 +78,8 @@ const AuthButton = props => {
 
     const logoutTemplate = (icon, path, item, options) => {
         return (
-            <li className={`p-menuitem`}>
-                <Button label="Logout" icon="pi pi-sign-out" className="p-menuitem" onClick={() => changeUser({type:"guest"})}/>
+            <li className={`login-dropdown-option-logout-container`}>
+                <Button label="Logout" icon="pi pi-sign-out" className="login-dropdown-option-logout p-button-danger p-button-text" onClick={() => changeUser({type:"guest"})}/>
             </li>
         )
     }

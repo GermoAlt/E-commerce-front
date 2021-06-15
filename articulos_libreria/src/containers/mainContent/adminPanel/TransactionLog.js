@@ -4,6 +4,7 @@ import { Column } from 'primereact/column';
 import TransactionDialog from "./TransactionDialog";
 import Transactions from "../../../resources/json/transactions.json";
 import {Redirect} from "react-router";
+import useUser from "../../../hooks/useUser";
 
 const detailsBodyTemplate = (rowdata) => {
     return (
@@ -15,7 +16,8 @@ const detailsBodyTemplate = (rowdata) => {
 
 export default function TransactionLog(props) {
     const [transactions] = useState(Transactions.data);
-    if(props.isLoggedIn !== "admin"){
+    const {user, changeUser} = useUser();
+    if(user.type !== "admin"){
         return <Redirect to={"/"}/>
     }
     return (

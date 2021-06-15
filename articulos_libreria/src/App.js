@@ -16,7 +16,6 @@ import { Provider as CartProvider } from './contexts/CartContext'
 import {UserProvider} from './contexts/UserContext'
 
 export default function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(null);
 
     PrimeReact.ripple = true;
   return (
@@ -26,8 +25,8 @@ export default function App() {
             <UserProvider>
                 <Router>
                   <ScrollTop/>
-                      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={(value) => setIsLoggedIn(value)}/>
-                      <MainContent isLoggedIn={isLoggedIn}/>
+                      <Header/>
+                      <MainContent/>
                 </Router>
             </UserProvider>
           </CartProvider>
