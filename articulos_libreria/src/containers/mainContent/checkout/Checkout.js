@@ -61,10 +61,10 @@ const Checkout = () =>{
                     <span>Total: ${precioTotal}</span>
                 </h5>
 
-                <Steps model={items} activeIndex={activeIndex} onSelect={(e) => setActiveIndex(e.index)} readOnly={false}/>
-                <Step1 visible={activeIndex}/>
-                <Step2 visible={activeIndex}/>
-                <Step3 visible={activeIndex}/>
+                <Steps model={items} activeIndex={activeIndex}  readOnly={true}/>
+                <Step1 visible={activeIndex} changeToStep={(num) => changeToStep(num)}/>
+                <Step2 visible={activeIndex} changeToStep={(num) => changeToStep(num)}/>
+                <Step3 visible={activeIndex} changeToStep={(num) => changeToStep(num)}/>
             </div>
         </div>
     );

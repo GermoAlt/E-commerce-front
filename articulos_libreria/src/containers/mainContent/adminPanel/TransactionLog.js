@@ -17,7 +17,7 @@ const detailsBodyTemplate = (rowdata) => {
 export default function TransactionLog(props) {
     const [transactions] = useState(Transactions.data);
     const {user, changeUser} = useUser();
-    if(user.type !== "admin"){
+    if(user.tipo !== "admin"){
         return <Redirect to={"/"}/>
     }
     return (

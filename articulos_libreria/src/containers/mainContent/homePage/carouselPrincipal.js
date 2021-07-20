@@ -43,7 +43,6 @@ const productTemplate = (producto) => {
                 <div>
                         <h4 className="p-mb-1">{producto.name}</h4>
                         <h6 className="p-mt-0 p-mb-3">${producto.price}</h6>
-                        <span className={`product-badge status-${producto.inventoryStatus.toLowerCase()}`}>{producto.inventoryStatus}</span>
                         <div className="car-buttons p-mt-5">
                             <Button icon="pi pi-search" className="p-button p-button-rounded p-mr-2" onClick={() => redirect(producto.id)}/>
                         </div>

@@ -125,7 +125,13 @@ DATAVIEW
 }
 
 .featured{
+    margin: auto;
+    max-width: 100%;
     padding-bottom: 50px;
+}
+
+.featured > .p-dataview{
+    width: 100%;
 }
 
 .featured-panel-title{

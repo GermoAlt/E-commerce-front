@@ -2,7 +2,7 @@
 LOGIN
  */
 .login-dialog{
-    width: 20vw;
+    width: 25vw;
 }
 
 .login-dialog-logo{
@@ -21,10 +21,17 @@ LOGIN
     flex-direction: column;
 }
 
-.login-dialog-input{
-    margin: 20px auto;
-    display: inline-block;
+.login-dialog-footer{
+    margin-left: auto;
+    margin-top: auto;
+}
 
+.login-dialog-footer-container{
+    display: flex;
+    flex-direction: column;
+}
+.login-dialog-sign-up-text{
+    margin-left: auto;
 }
 
 .login-dialog-error-message{

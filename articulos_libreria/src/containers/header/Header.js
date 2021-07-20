@@ -100,9 +100,9 @@ export default function Header(props) {
                     <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar"/>
                 </span>
             </div>
-            <Link to="/carrito" className="p-button-rounded p-mr-2">
-                <Button label={"Carrito"} icon="pi pi-shopping-cart" className="p-button-rounded p-mr-2">
-                    <Badge className={`${carritoCantidad.length === 0 ? "hidden" : ""}`} value={carritoCantidad.length}/>
+            <Link to="/carrito" className="p-button-rounded p-mr-2 header-cart-button">
+                <Button label={"Carrito"} icon="pi pi-shopping-cart" className="p-mr-2 p-button-text p-button-rounded">
+                    <Badge className={`${carritoCantidad.length === 0 ? "hidden" : ""} header-cart-badge`} value={carritoCantidad.length}/>
                 </Button>
             </Link>
             <Login/>

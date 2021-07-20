@@ -282,7 +282,7 @@ const ProductPanel = (props) => {
         </div>
     );
 
-    if(user.type !== "admin"){
+    if(user.tipo !== "admin"){
         return <Redirect to={"/"}/>
     }
 

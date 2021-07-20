@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from "primereact/button";
 const Step3 = (props) => {
     return (
         <div className={`${props.visible !== 2 ? "hidden" : ""}`}>

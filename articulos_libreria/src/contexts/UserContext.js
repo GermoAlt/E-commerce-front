@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const UserContext = React.createContext();
 
 const defaultUser = {
-    type: "guest",
+    tipo: "guest",
 };
 export const UserProvider = ({ children, user }) => {
     const [currentUser, setCurrentUser] = useState(

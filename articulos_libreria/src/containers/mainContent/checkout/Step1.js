@@ -9,10 +9,11 @@ const Step1 = (props) => {
 
     const precioTotal = products.reduce((acc, curr) => acc + curr.price, 0);
 
+
     return (
 
         <div className={`${props.visible !== 0 ? "hidden" : ""}`}>
-            <Button className={"checkout-accordion-tab-button"} iconPos={"right"} icon={"pi pi-arrow-circle-right"} label={"Siguiente"}/>
+            <Button className={"checkout-accordion-tab-button"} iconPos={"right"} icon={"pi pi-arrow-circle-right"} label={"Siguiente"} onClick={() => props.changeToStep(1)}/>
             <div className={"cart-item-list-step-1"}>
                 {products.map (product => {
                     return(
